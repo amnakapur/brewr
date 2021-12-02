@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "589457418295",
+    "project_id": "brewrapp-2cb60",
+    "storage_bucket": "brewrapp-2cb60.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:589457418295:android:906eaeeca0ba39b33037b2",
+        "android_client_info": {
+          "package_name": "hu.ait.brewrapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "589457418295-aktgdl8msad1prv8jnu0hjs2trqpvess.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB4UgbH8NkIPsui2Te4Vfas0XOooLUK1m0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "589457418295-aktgdl8msad1prv8jnu0hjs2trqpvess.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
