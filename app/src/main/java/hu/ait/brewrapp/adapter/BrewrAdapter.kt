@@ -5,6 +5,7 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
+import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import hu.ait.brewrapp.ScrollingActivity
@@ -16,19 +17,24 @@ import hu.ait.brewrapp.databinding.DayInfoRowBinding
 import hu.ait.brewrapp.touch.BrewrTouchHelperCallback
 
 
-import hu.bme.todorecyclerview.data.AppDatabase
-import hu.bme.todorecyclerview.data.Todo
-import hu.bme.todorecyclerview.databinding.TodoRowBinding
-import hu.bme.todorecyclerview.touch.TodoTouchHelperCallback
+class BrewrAdapter (
 
-class BrewrAdapter : ListAdapter<Brewr, BrewrAdapter.ViewHolder>, BrewrTouchHelperCallback {
+    val context: Context,
+    listDays: List<DayInfo>): RecyclerView.Adapter<BrewrAdapter.ViewHolder>(), ItemTouchHelperCallback {
 
-    val context: Context
+
+        private var days = mutableListOf<DayInfo>()
+        init {
+            days.addAll(listDays)
+        }
+
+
+
 
     constructor(context: Context) : super(TodoDiffCallback()) {
         this.context = context
 
-    }
+
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -82,14 +88,7 @@ class BrewrAdapter : ListAdapter<Brewr, BrewrAdapter.ViewHolder>, BrewrTouchHelp
         }
     }
 }
+}
 
-    class BrewrDiffCallback : DiffUtil.ItemCallback<Brewr>() {
-        override fun areItemsTheSame(oldItem: Brewr, newItem: Brewr): Boolean {
-            return oldItem._id == newItem._id
-        }
 
-        @SuppressLint("DiffUtilEquals")
-        override fun areContentsTheSame(oldItem: Brewr, newItem: Brewr): Boolean {
-            return oldItem == newItem
-        }
-    }
+    
